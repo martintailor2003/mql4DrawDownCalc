@@ -1,0 +1,7 @@
+//dd%
+double dd_current = ((highest_balance-AccountBalance())/highest_balance)*100;
+//usd dd
+//dd_percentage->max
+double dd_ratio = (dd_percentage-dd_current)/dd_percentage;
+
+//multiply your lot with dd_ratio to reduce risk by DD ratio
