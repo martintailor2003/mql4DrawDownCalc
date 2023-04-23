@@ -19,9 +19,7 @@ double DrawDownCalc()
    }
    //dd%
    dd_current = ((highest_balance-AccountBalance())/highest_balance)*100;
-   //usd dd
-   //dd_percentage->max
-   dd_ratio = (dd_percentage-dd_current)/dd_percentage;
-   return dd_ratio;
+   
+   return dd_current;
    
 }
