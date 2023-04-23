@@ -1,0 +1,27 @@
+double DrawDownCalc()
+{
+   double current_balance = AccountBalance();
+   double history=0;
+   double highest_balance=0;
+   double dd_ratio;
+
+   //if(OrderSelect(0,SELECT_BY_POS,MODE_HISTORY)){
+   //      start_balance=OrderProfit();  }
+   for(int i=0; i<OrdersHistoryTotal(); i++)
+   {
+   
+      if(OrderSelect(i,SELECT_BY_POS,MODE_HISTORY)){
+         history+=OrderProfit()+OrderSwap()+OrderCommission();
+         if(history > highest_balance){
+            highest_balance = history;
+         }
+      }
+   }
+   //dd%
+   dd_current = ((highest_balance-AccountBalance())/highest_balance)*100;
+   //usd dd
+   //dd_percentage->max
+   dd_ratio = (dd_percentage-dd_current)/dd_percentage;
+   return dd_ratio;
+   
+}
